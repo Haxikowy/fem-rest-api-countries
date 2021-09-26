@@ -1,0 +1,32 @@
+.header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 999;
+
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  padding: 1.5em .625em;
+  box-shadow: var(--shadow);
+
+  background-color: var(--elements-clr);
+  &__logo{
+    font-weight: var(--weight-bold);
+  }
+  &__theme-switch{
+    border: none;
+    background-color: transparent;
+    font-size: .875rem;
+    font-weight: var(--weight-semibold);
+    svg{
+      margin-right: .25em;
+    }
+  }
+  &+*{
+    padding-top: 6em;
+  }
+}
