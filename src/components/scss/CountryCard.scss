@@ -1,0 +1,35 @@
+.country-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 250px;
+
+  border-radius: var(--border-radius);
+  background-color: var(--elements-clr);
+  overflow: hidden;
+
+  &__informations{
+    padding: 1.5em;
+
+    .country-card__name{
+      font-size: 1rem;
+      font-weight: var(--weight-bold);
+      margin-bottom: 1em;
+    }
+
+    .country-card__information{
+      display: block;
+      font-size: .875rem;
+
+      &+.country-card__information {
+        margin-top: .5em;
+      }
+
+      .country-card__prefix{
+        font-weight: var(--weight-semibold);
+      }
+    }
+  }
+
+}

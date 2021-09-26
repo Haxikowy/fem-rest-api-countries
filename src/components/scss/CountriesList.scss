@@ -1,0 +1,17 @@
+.countries-list{
+  padding-bottom: 2em;
+
+  &__menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.875em;
+  }
+  &__content{
+    margin-top: 1.875em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.9375em;
+  }
+}
