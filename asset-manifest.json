@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/fem-rest-api-countries/static/css/main.4c33009d.chunk.css",
-    "main.js": "/fem-rest-api-countries/static/js/main.52b3da2d.chunk.js",
-    "main.js.map": "/fem-rest-api-countries/static/js/main.52b3da2d.chunk.js.map",
+    "main.js": "/fem-rest-api-countries/static/js/main.6ddff8a4.chunk.js",
+    "main.js.map": "/fem-rest-api-countries/static/js/main.6ddff8a4.chunk.js.map",
     "runtime-main.js": "/fem-rest-api-countries/static/js/runtime-main.ad6e4f55.js",
     "runtime-main.js.map": "/fem-rest-api-countries/static/js/runtime-main.ad6e4f55.js.map",
-    "static/js/2.3f1f4558.chunk.js": "/fem-rest-api-countries/static/js/2.3f1f4558.chunk.js",
-    "static/js/2.3f1f4558.chunk.js.map": "/fem-rest-api-countries/static/js/2.3f1f4558.chunk.js.map",
+    "static/js/2.222bead3.chunk.js": "/fem-rest-api-countries/static/js/2.222bead3.chunk.js",
+    "static/js/2.222bead3.chunk.js.map": "/fem-rest-api-countries/static/js/2.222bead3.chunk.js.map",
     "index.html": "/fem-rest-api-countries/index.html",
     "static/css/main.4c33009d.chunk.css.map": "/fem-rest-api-countries/static/css/main.4c33009d.chunk.css.map",
-    "static/js/2.3f1f4558.chunk.js.LICENSE.txt": "/fem-rest-api-countries/static/js/2.3f1f4558.chunk.js.LICENSE.txt"
+    "static/js/2.222bead3.chunk.js.LICENSE.txt": "/fem-rest-api-countries/static/js/2.222bead3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ad6e4f55.js",
-    "static/js/2.3f1f4558.chunk.js",
+    "static/js/2.222bead3.chunk.js",
     "static/css/main.4c33009d.chunk.css",
-    "static/js/main.52b3da2d.chunk.js"
+    "static/js/main.6ddff8a4.chunk.js"
   ]
 }
