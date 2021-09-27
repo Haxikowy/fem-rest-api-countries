@@ -9,6 +9,12 @@
   background-color: var(--elements-clr);
   overflow: hidden;
 
+  @media(min-width: 625px){  img{
+    width: 250px;
+    height: 166px;
+  }
+}
+
   &__informations{
     padding: 1.5em;
 
@@ -31,5 +37,9 @@
       }
     }
   }
-
+  
+  .loader__container{
+    width: 250px;
+    height: 166px;
+  }
 }

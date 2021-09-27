@@ -1,7 +1,11 @@
 import '../scss/SearchInput.scss';
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
+import { connect } from 'react-redux';
+import { setTerm } from '../../actions';
 
 const SearchInput = ({ term, setTerm }) => {
   return (
@@ -21,4 +25,8 @@ const SearchInput = ({ term, setTerm }) => {
   );
 };
 
-export default SearchInput;
+const mapStateToProps = state => {
+  return { term: state.term };
+};
+
+export default connect(mapStateToProps, { setTerm })(SearchInput);

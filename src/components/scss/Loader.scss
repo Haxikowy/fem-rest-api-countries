@@ -1,0 +1,30 @@
+.loader__container{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  .loader{
+    display: block;
+    width: 50%;
+    height: 20%;
+    opacity: .5;
+    animation: pulse 1s linear alternate infinite, spin 750ms linear infinite;
+  }
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg)
+  }to{
+    transform: rotate(360deg)
+  }
+  
+}
+
+@keyframes pulse {
+  from{
+    opacity: .5
+  } to {
+    opacity: 0;
+  }
+}
