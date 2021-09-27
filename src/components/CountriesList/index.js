@@ -13,6 +13,10 @@ const CountriesList = props => {
   const footerRef = useRef();
 
   useEffect(() => {
+    fetchCountries();
+  }, [fetchCountries]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (!footerRef.current) return;
 
@@ -27,51 +31,32 @@ const CountriesList = props => {
     };
   }, [rendered, setRendered]);
 
-  useEffect(() => {
-    fetchCountries();
-  }, [fetchCountries]);
-
   const renderCards = () => {
     const { countries, term, selectedRegion } = props;
 
     if (!countries.length) {
       return <Loader />;
-    } else if (selectedRegion.value.length && term.length) {
-      return countries
-        .filter(
-          country =>
-            country.continent === selectedRegion.value &&
-            country.name.toLowerCase().includes(term.toLowerCase())
-        )
-        .slice(0, rendered)
-        .map(country => {
-          return <CountryCard key={country.numericCode} data={country} />;
-        });
-    } else if (selectedRegion.value.length) {
-      return countries
-        .filter(country => country.continent === selectedRegion.value)
-        .slice(0, rendered)
-        .map(country => {
-          return <CountryCard key={country.numericCode} data={country} />;
-        });
-    } else if (term.length) {
-      return countries
-        .filter(country =>
-          country.name.toLowerCase().includes(term.toLowerCase())
-        )
-        .slice(0, rendered)
-        .map(country => {
-          return <CountryCard key={country.numericCode} data={country} />;
-        });
-    } else {
-      return countries.slice(0, rendered).map((country, i, arr) => {
-        if (arr.length === i + 1) {
-          return <CountryCard key={country.alpha3Code} data={country} />;
-        } else {
-          return <CountryCard key={country.alpha3Code} data={country} />;
-        }
-      });
     }
+
+    let result = countries;
+    if (selectedRegion.value.length && term.length) {
+      result = countries.filter(
+        country =>
+          country.continent === selectedRegion.value &&
+          country.name.toLowerCase().includes(term.toLowerCase())
+      );
+    } else if (selectedRegion.value.length) {
+      result = countries.filter(
+        country => country.continent === selectedRegion.value
+      );
+    } else if (term.length) {
+      result = countries.filter(country =>
+        country.name.toLowerCase().includes(term.toLowerCase())
+      );
+    }
+    return result.slice(0, rendered).map(country => {
+      return <CountryCard key={country.numericCode} data={country} />;
+    });
   };
 
   return (

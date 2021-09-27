@@ -28,6 +28,7 @@ const Dropdown = ({ selectedRegion, selectRegion, resetRendered }) => {
       setActive(false);
     };
 
+    selectRegion(regions[0]);
     document.body.addEventListener('click', onBodyClick, { capture: true });
 
     return () => {
@@ -35,7 +36,7 @@ const Dropdown = ({ selectedRegion, selectRegion, resetRendered }) => {
         capture: true,
       });
     };
-  }, []);
+  }, [selectRegion]);
 
   const renderList = () => {
     return regions.map((region, i) => {
@@ -69,7 +70,7 @@ const Dropdown = ({ selectedRegion, selectRegion, resetRendered }) => {
       onClick={() => setActive(!active)}
       className={`dropdown ${showDropdown}`}>
       <div className="dropdown__text">
-        {selectedRegion.name || 'Filter by Region'}
+        {selectedRegion.name}
         <FontAwesomeIcon className="icon" icon={solid('angle-down')} />
       </div>
       <ul className={`dropdown__list`}>{renderList()}</ul>
