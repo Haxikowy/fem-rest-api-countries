@@ -1,8 +1,11 @@
 import '../scss/CountryCard.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
 
 const CountryCard = ({ data }) => {
+  const [isLoaded, setLoaded] = useState(false);
+
   const population = `${data.population}`.replace(
     /(\d)(?=(\d\d\d)+(?!\d))/g,
     '$1,'
@@ -10,13 +13,23 @@ const CountryCard = ({ data }) => {
 
   return (
     <div className="country-card">
-      <Link to={`/details/${data.numericCode}`} className="country-card__flag">
-        <img src={data.flags[1]} alt={`${data.name} flag`} />
+      <Link
+        tabIndex="-1"
+        to={`/details/${data.alpha3Code}`}
+        className="country-card__flag">
+        {isLoaded ? null : (
+          <Loader style={{ width: '250px', height: '166px' }} />
+        )}
+        <img
+          onLoad={() => setLoaded(!isLoaded)}
+          style={isLoaded ? {} : { display: 'none' }}
+          src={data.flags[1]}
+          alt={`${data.name} flag`}
+        />
       </Link>
+
       <div className="country-card__informations">
-        <Link
-          to={`/details/${data.numericCode}`}
-          className="country-card__name">
+        <Link to={`/details/${data.alpha3Code}`} className="country-card__name">
           {data.name}
         </Link>
         <p className="country-card__information">
