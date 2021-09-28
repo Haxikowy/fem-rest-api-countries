@@ -34,7 +34,7 @@ const CountriesList = props => {
   const renderCards = () => {
     const { countries, term, selectedRegion } = props;
 
-    if (!countries.length) {
+    if (countries.length < 2) {
       return <Loader />;
     }
 
@@ -42,12 +42,12 @@ const CountriesList = props => {
     if (selectedRegion.value.length && term.length) {
       result = countries.filter(
         country =>
-          country.continent === selectedRegion.value &&
+          country.region === selectedRegion.value &&
           country.name.toLowerCase().includes(term.toLowerCase())
       );
     } else if (selectedRegion.value.length) {
       result = countries.filter(
-        country => country.continent === selectedRegion.value
+        country => country.region === selectedRegion.value
       );
     } else if (term.length) {
       result = countries.filter(country =>

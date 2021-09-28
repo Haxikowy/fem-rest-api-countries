@@ -23,7 +23,7 @@ const CountryCard = ({ data }) => {
         <img
           onLoad={() => setLoaded(!isLoaded)}
           style={isLoaded ? {} : { display: 'none' }}
-          src={data.flags[1]}
+          src={data.flag}
           alt={`${data.name} flag`}
         />
       </Link>
@@ -38,7 +38,7 @@ const CountryCard = ({ data }) => {
         </p>
         <p className="country-card__information">
           <span className="country-card__prefix">Region: </span>
-          {data.continent}
+          {data.region}
         </p>
         <p className="country-card__information">
           <span className="country-card__prefix">Capital: </span>
