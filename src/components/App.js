@@ -1,6 +1,6 @@
 import './scss/App.scss';
 import React, { useEffect, useState } from 'react';
-import { Switch, Router, Route } from 'react-router-dom';
+import { Switch, HashRouter, Route } from 'react-router-dom';
 import history from '../history';
 
 import Header from './Header';
@@ -19,13 +19,13 @@ const App = () => {
   return (
     <div className={`container ${containerClassName}`}>
       <div className="wrapper">
-        <Router history={history}>
+        <HashRouter history={history}>
           <Header theme={theme} setTheme={setTheme} />
           <Switch>
             <Route path="/" exact component={CountriesList} />
             <Route path="/details/:id" exact component={CountryDetails} />
           </Switch>
-        </Router>
+        </HashRouter>
       </div>
     </div>
   );
