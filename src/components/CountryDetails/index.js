@@ -15,10 +15,18 @@ import Borders from './Borders';
 const CountryDetails = props => {
   const { fetchCountries, country, countries } = props;
   const [isLoaded, setIsLoaded] = useState(false);
+  const { id } = props.match.params;
 
   useEffect(() => {
     fetchCountries();
   }, [fetchCountries]);
+
+  // resets state when u change page to other on details
+  useEffect(() => {
+    return () => {
+      setIsLoaded(false);
+    };
+  }, [id]);
 
   const renderContent = () => {
     if (country === undefined || countries === undefined) return <Loader />;
@@ -41,7 +49,7 @@ const CountryDetails = props => {
           <div className="country-details__flag">
             {isLoaded ? null : <Loader />}
             <img
-              onLoad={() => setIsLoaded(true)}
+              onLoad={() => setIsLoaded(!isLoaded)}
               src={country.flag}
               style={isLoaded ? {} : { display: 'none' }}
               alt={`${country.name} flag`}
