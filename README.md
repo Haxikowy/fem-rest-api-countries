@@ -30,14 +30,14 @@ Users should be able to:
 
 ### Screenshots
 
-<img src="./screenshots/desktop-home-dark.png" width="300"/>
+<img src="./screenshots/desktop-main-dark.png" width="300"/>
 <img src="./screenshots/desktop-details-dark.png" width="300"/>
-<img src="./screenshots/desktop-home-light.png" width="300"/>
+<img src="./screenshots/desktop-main-light.png" width="300"/>
 <img src="./screenshots/desktop-details-light.png" width="300"/>
 
-<img src="./screenshots/mobile-home-dark.png" width="200"/>
+<img src="./screenshots/mobile-main-dark.png" width="200"/>
 <img src="./screenshots/mobile-details-dark.png" width="200"/>
-<img src="./screenshots/mobile-home-light.png" width="200"/>
+<img src="./screenshots/mobile-main-light.png" width="200"/>
 <img src="./screenshots/mobile-details-light.png" width="200"/>
 
 ### Links
