@@ -20,7 +20,7 @@
   &__theme-switch{
     border: none;
     background-color: transparent;
-    font-size: .875rem;
+    font-size: var(--fsize-small);
     font-weight: var(--weight-semibold);
     svg{
       margin-right: .25em;

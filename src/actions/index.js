@@ -1,18 +1,11 @@
 import restCountries from '../apis/restCountries';
 import {
-  FETCH_COUNTRY,
   FETCH_COUNTRIES,
   SET_TERM,
   SELECT_REGION,
   SET_RENDERED,
   RESET_RENDERED,
 } from './types';
-
-export const fetchCountry = code => async dispatch => {
-  const { data } = await restCountries.get(`/alpha/${code}`);
-
-  return dispatch({ type: FETCH_COUNTRY, payload: data });
-};
 
 export const fetchCountries = () => async dispatch => {
   const { data } = await restCountries.get('/all');

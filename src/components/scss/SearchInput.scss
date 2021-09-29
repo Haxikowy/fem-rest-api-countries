@@ -13,7 +13,7 @@
     background-color: transparent;
     border: none;
     color: var(--text-clr);
-    font-size: .875rem;
+    font-size: var(--fsize-small);
     outline-width: 0;
     
     &::placeholder{

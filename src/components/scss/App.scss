@@ -1,12 +1,43 @@
 @use 'resets';
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+// custom scrollbar for chrome
+::-webkit-scrollbar{
+  width: .75em;
+
+  &-track{
+    background-color: hsl(0, 0%, 70%);
+  }
+  &-thumb{
+    background-color: hsl(0, 0%, 30%);
+    border: 2px solid hsl(0, 0%, 70%);
+
+    &:hover{
+      background-color: hsla(0, 50%, 50%, .80);
+    }
+  }
+
+}
+
+// custom scrollbar for firefox
+
+
+@supports(scrollbar-color: hsl(0, 0%, 30%) hsl(0, 0%, 70%)){
+  * {
+    scrollbar-color: hsl(0, 0%, 30%) hsl(0, 0%, 70%);
+    scrollbar-width: thin;
+  }
+}
+
 .container{
   --border-radius: 5px;
 
   --weight-regular: 300;
   --weight-semibold: 600;
   --weight-bold: 800;
+
+  --fsize-big: 1rem;
+  --fsize-small: .875rem;
 
   font-family: 'Nunito Sans', sans-serif;
   color: var(--text-clr);
@@ -21,19 +52,20 @@
     --elements-clr: hsl(0, 0%, 100%);
     --shadow: 2px 4px 4px hsla(0, 0%, 90%, .15),
     6px 12px 12px hsla(0, 0%, 90%, .1);
+    --btn-shadow: 1px 2px 2px hsla(0, 0%, 90%, .15),
+    3px 6px 6px hsla(0, 0%, 90%, .1),
+    6px 12px 12px hsla(0, 0%, 90%, .1);
   }
   &.dark-theme{
     --text-clr: hsl(0, 0%, 100%);
     --background-clr: hsl(207, 26%, 17%);
     --elements-clr: hsl(209, 23%, 22%);
-    --shadow: 1px 2px 2px hsla(207, 26%, 10%, .15),
+    --shadow: 2px 4px 4px hsla(207, 26%, 10%, .15),
     6px 12px 12px hsla(207, 26%, 10%, .1);
+    --btn-shadow: 1px 2px 2px hsla(207, 26%, 10%, .2),
+    3px 6px 6px hsla(207, 26%, 10%, .15),
+    6px 12px 12px hsla(207, 26%, 10%, .15);
   }
-}
-
-.wrapper{
-  width: min(90%, 1440px);
-  margin: 0 auto;
 }
 
 button{
@@ -49,4 +81,32 @@ a{
 
 img{
   max-width: 100%;
+}
+
+ul{
+  list-style: none;
+}
+
+.wrapper{
+  width: min(85%, 1440px);
+  margin: 0 auto;
+}
+
+.highlighted{
+  font-weight: var(--weight-semibold);
+}
+
+.btn{
+  padding: .4375em 1.75em;
+  border: none;
+  box-shadow: var(--btn-shadow);
+  background-color: var(--elements-clr);
+  color: var(--text-clr);
+  font-size: var(--fsize-small);
+
+  transition: opacity 150ms linear;
+  
+  &:hover{
+    opacity: .7;
+  }
 }
