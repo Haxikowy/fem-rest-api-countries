@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
 
-const CountryCard = ({ data }) => {
+const CountryCard = ({ data, onLoad }) => {
   const [isLoaded, setLoaded] = useState(false);
 
   const population = `${data.population}`.replace(
@@ -33,15 +33,15 @@ const CountryCard = ({ data }) => {
           {data.name}
         </Link>
         <p className="country-card__information">
-          <span className="country-card__prefix">Population: </span>
+          <span className="highlighted">Population: </span>
           {population}
         </p>
         <p className="country-card__information">
-          <span className="country-card__prefix">Region: </span>
+          <span className="highlighted">Region: </span>
           {data.region}
         </p>
         <p className="country-card__information">
-          <span className="country-card__prefix">Capital: </span>
+          <span className="highlighted">Capital: </span>
           {data.capital}
         </p>
       </div>
