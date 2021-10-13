@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-const Header = props => {
+const Header = ({theme, setTheme}) => {
   const renderButtonText = () => {
-    if (props.theme) {
+    if (theme) {
       return (
         <>
           <FontAwesomeIcon icon={solid('moon')} />
           Dark Mode
         </>
       );
-    } else if (!props.theme) {
+    } else if (!theme) {
       return (
         <>
           <FontAwesomeIcon icon={solid('sun')} />
@@ -30,7 +30,7 @@ const Header = props => {
           Where in the world?
         </Link>
         <button
-          onClick={() => props.setTheme(!props.theme)}
+          onClick={() => setTheme(prev => !prev)}
           className="header__theme-switch">
           {renderButtonText()}
         </button>

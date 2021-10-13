@@ -50,7 +50,7 @@ const CountryDetails = props => {
             {isLoaded ? null : <Loader />}
             <img
               onLoad={() => setIsLoaded(!isLoaded)}
-              src={country.flag}
+              src={country.flags.png}
               style={isLoaded ? {} : { display: 'none' }}
               alt={`${country.name} flag`}
             />
