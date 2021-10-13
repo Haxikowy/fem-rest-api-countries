@@ -29,7 +29,7 @@ const CountriesList = props => {
       if (!footerRef.current) return;
 
       if (window.scrollY + window.innerHeight >= footerRef.current.offsetTop) {
-        if (rendered < 248) setRendered(19);
+        if (rendered <= 249) setRendered(18);
       }
     };
     window.addEventListener('scroll', handleScroll);

@@ -23,7 +23,7 @@ const CountryCard = ({ data, onLoad }) => {
         <img
           onLoad={() => setLoaded(!isLoaded)}
           style={isLoaded ? {} : { display: 'none' }}
-          src={data.flag}
+          src={data.flags.png}
           alt={`${data.name} flag`}
         />
       </Link>
